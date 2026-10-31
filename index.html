@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crashoria: Ultimate Road Adventure - Portable Edition</title>
+    <meta name="description" content="Crashoria: Ultimate Road Adventure - 完全オフライン・広告なし・情報収集ゼロのソフトボディ物理演算ロードアドベンチャー">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ff5722',
+                            red: '#e53935',
+                            dark: '#0d1117',
+                            card: '#161b22',
+                            border: '#30363d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Noto+Sans+JP:wght@400;600;800&display=swap');
+        .font-racing {
+            font-family: 'Teko', 'Noto Sans JP', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .hero-pattern {
+            background-color: #0b0f15;
+            background-image: radial-gradient(#1f2937 1px, transparent 1px), radial-gradient(#1f2937 1px, #0b0f15 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f15] text-slate-200 font-sans antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- ナビゲーションバー -->
+    <nav class="sticky top-0 z-50 bg-[#0b0f15]/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-brand-orange to-brand-red text-white font-black text-xl italic shadow-lg shadow-brand-orange/30">
+                    C
+                </span>
+                <div>
+                    <span class="font-racing text-2xl font-bold tracking-wider text-white block leading-none">CRASHORIA</span>
+                    <span class="text-[10px] text-slate-400 font-mono tracking-widest uppercase">Portable Edition v3.0</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-brand-orange transition-colors">概要</a>
+                <a href="#features" class="text-slate-300 hover:text-brand-orange transition-colors">特徴・システム</a>
+                <a href="#install" class="text-slate-300 hover:text-brand-orange transition-colors">MSIX導入手順</a>
+                <a href="#privacy" class="text-slate-300 hover:text-brand-orange transition-colors flex items-center gap-1">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    プライバシーポリシー
+                </a>
+            </div>
+            <div>
+                <a href="#install" class="px-4 py-2 rounded-md bg-gradient-to-r from-brand-orange to-brand-red hover:brightness-110 text-white font-bold text-sm shadow-md transition-all">
+                    入手・インストール
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <header class="hero-pattern relative border-b border-brand-border py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0b0f15]/50 to-[#0b0f15] pointer-events-none"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative text-center">
+            
+            <!-- バッジ -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-semibold text-slate-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Windows App (MSIX) / ポータブル対応
+            </div>
+
+            <h1 class="font-racing text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase italic leading-none mb-4">
+                Crashoria: <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-amber-400 to-brand-red">Ultimate Road</span> Adventure
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 font-medium leading-relaxed">
+                精密なソフトボディ物理演算（Soft-Body Physics）が織りなす極限のロードアドベンチャー。
+                外部通信なし・広告なし・個人データ収集ゼロの、安全で純粋なオフラインドライブ体験を提供します。
+            </p>
+
+            <!-- 信頼バッジ群（ストア公開要件アピール） -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10 text-left">
+                <div class="bg-brand-card/90 border border-brand-border p-3 rounded-lg flex items-center space-x-3">
+                    <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"/></svg>
+                    <div>
+                        <div class="text-xs font-bold text-white">外部通信なし</div>
+                        <div class="text-[11px] text-slate-400">完全オフライン動作</div>
+                    </div>
+                </div>
+                <div class="bg-brand-card/90 border border-brand-border p-3 rounded-lg flex items-center space-x-3">
+                    <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div>
+                        <div class="text-xs font-bold text-white">広告なし</div>
+                        <div class="text-[11px] text-slate-400">広告モジュール排除</div>
+                    </div>
+                </div>
+                <div class="bg-brand-card/90 border border-brand-border p-3 rounded-lg flex items-center space-x-3">
+                    <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <div>
+                        <div class="text-xs font-bold text-white">情報収集ゼロ</div>
+                        <div class="text-[11px] text-slate-400">個人情報・トラッキング無</div>
+                    </div>
+                </div>
+                <div class="bg-brand-card/90 border border-brand-border p-3 rounded-lg flex items-center space-x-3">
+                    <svg class="w-6 h-6 text-brand-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                    <div>
+                        <div class="text-xs font-bold text-white">サウンド搭載</div>
+                        <div class="text-[11px] text-slate-400">臨場感あふれる効果音</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- アクションボタン -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#install" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gradient-to-r from-brand-orange to-brand-red text-white font-bold text-base shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/40 transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    MSIXパッケージをインストール
+                </a>
+                <a href="#privacy" class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-semibold text-base transition-colors flex items-center justify-center gap-2">
+                    プライバシーポリシーを確認
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- アプリ概要 & スペック情報 -->
+    <section id="about" class="py-16 bg-[#0d1117] border-b border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-orange">About the App</h2>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Crashoria-Ultimate-Road-Adventure-Portable</h3>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        本作は、車両の破壊・変形をリアルタイムに計算するソフトボディ物理演算エンジンを基盤としたポータブル型ドライビングアドベンチャーです。
+                        Microsoft StoreやWindows環境向けに正式なMSIXパッケージとしてビルドされており、システムのレジストリや不要な場所に痕跡を残さず、安全かつクリーンにインストール・アンインストールが可能です。
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        プレイヤーはブラックアイスや高低差のある危険なロード環境に挑み、パワードリフトやスリップストリームを駆使しながらハイスコアを目指します。
+                    </p>
+                </div>
+
+                <!-- 基本スペック表 -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-3">
+                    <h4 class="text-sm font-bold text-white border-b border-brand-border pb-2">パッケージ仕様・情報</h4>
+                    <dl class="space-y-2 text-xs">
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">アプリ名</dt>
+                            <dd class="text-slate-200 font-mono font-medium">Crashoria-Portable</dd>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">バージョン</dt>
+                            <dd class="text-slate-200 font-mono">3.0.0</dd>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">パッケージ形式</dt>
+                            <dd class="text-emerald-400 font-mono font-bold">MSIX Package</dd>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">パブリッシャー</dt>
+                            <dd class="text-slate-200">youyouboydragonOfficial</dd>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">外部通信</dt>
+                            <dd class="text-emerald-400 font-semibold">なし (完全オフライン)</dd>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800">
+                            <dt class="text-slate-400">広告表示</dt>
+                            <dd class="text-emerald-400 font-semibold">なし</dd>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <dt class="text-slate-400">対応OS</dt>
+                            <dd class="text-slate-200">Windows 10 / 11 (x64)</dd>
+                        </div>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 機能・ハイライト -->
+    <section id="features" class="py-16 bg-[#0b0f15] border-b border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-orange mb-2">Gameplay Features</h2>
+                <h3 class="text-3xl font-extrabold text-white">ゲームの特徴とシステム</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 特徴1 -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 hover:border-slate-600 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">ソフトボディ物理演算</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        車体のリアルな凹みや衝撃の伝播、パーツの脱落をリアルタイムで再現。衝突の激しさを視覚的に体感できます。
+                    </p>
+                </div>
+
+                <!-- 特徴2 -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 hover:border-slate-600 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">ブラックアイス & 危険地形</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        凍結した路面（ブラックアイス）や激しい段差、巨大ジャンプ台など、油断が命取りとなるトラップが連続します。
+                    </p>
+                </div>
+
+                <!-- 特徴3 -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 hover:border-slate-600 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/10 text-brand-red flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">キルカメラ & ドリフト</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        パワードリフトやスリップストリームによる加速、クラッシュ時のダイナミックなスローモーションキルカメラを搭載。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- インストール手順 (MSIX) -->
+    <section id="install" class="py-16 bg-[#0d1117] border-b border-brand-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-orange mb-2">Installation Guide</h2>
+                <h3 class="text-3xl font-extrabold text-white">MSIX パッケージのインストール方法</h3>
+                <p class="text-slate-400 text-sm mt-2">Windowsのモダンなサンドボックス技術により、安全かつワンクリックで導入可能です。</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-brand-card border border-brand-border rounded-lg p-5 flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center text-sm">1</span>
+                    <div>
+                        <h4 class="font-bold text-white mb-1">MSIXファイルの入手</h4>
+                        <p class="text-sm text-slate-300">
+                            配布元（Microsoft Storeまたは公式リポジトリ）より「<code class="text-brand-orange font-mono">Crashoria-Ultimate-Road-Adventure-Portable.msix</code>」を入手します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-lg p-5 flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center text-sm">2</span>
+                    <div>
+                        <h4 class="font-bold text-white mb-1">パッケージを開いてインストール</h4>
+                        <p class="text-sm text-slate-300">
+                            ダウンロードした <code class="text-slate-200">.msix</code> ファイルをダブルクリックすると、Windowsの「アプリ インストーラー」が起動します。「インストール」ボタンをクリックしてください。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-lg p-5 flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center text-sm">3</span>
+                    <div>
+                        <h4 class="font-bold text-white mb-1">プレイ開始</h4>
+                        <p class="text-sm text-slate-300">
+                            インストール完了後、スタートメニューから即座に起動できます。不要になった場合も、スタートメニューの右クリックから綺麗にアンインストールできます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- プライバシーポリシー（Microsoft Store要件準拠） -->
+    <section id="privacy" class="py-16 bg-[#0b0f15]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="border border-brand-border bg-brand-card/90 rounded-2xl p-6 sm:p-10 shadow-xl">
+                
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-brand-border">
+                    <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">プライバシーポリシー (Privacy Policy)</h2>
+                        <p class="text-xs text-slate-400">最終更新日: 2026年10月31日 | 対象アプリ: Crashoria-Ultimate-Road-Adventure-Portable</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brand-orange rounded-full"></span>
+                            1. 個人情報の収集について
+                        </h3>
+                        <p>
+                            本アプリケーション「<strong>Crashoria-Ultimate-Road-Adventure-Portable</strong>」（以下、本アプリ）は、ユーザーの個人を特定できる情報（氏名、住所、メールアドレス、電話番号、位置情報、デバイス固有の識別子など）を<strong>一切収集・保存・要求いたしません。</strong>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brand-orange rounded-full"></span>
+                            2. 外部ネットワーク通信について
+                        </h3>
+                        <p>
+                            本アプリは<strong>完全オフライン</strong>で動作するスタンドアロン型ゲームです。ゲームプレイ中や起動時において、外部サーバーやクラウド、サードパーティへの通信・データ送信（テレメトリ、クラッシュレポート、分析ログの送出を含む）は<strong>一切行われません。</strong>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brand-orange rounded-full"></span>
+                            3. 広告およびサードパーティ製SDKについて
+                        </h3>
+                        <p>
+                            本アプリには広告表示モジュール、トラッキングツール、サードパーティ製マーケティングSDKは一切含まれていません。広告の配信や閲覧履歴の追跡が行われることはありません。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brand-orange rounded-full"></span>
+                            4. セーブデータおよびローカル保存について
+                        </h3>
+                        <p>
+                            ゲームの進行状況、設定値、ハイスコアなどのデータは、WindowsのMSIXサンドボックスが規定するユーザーのローカルストレージ内（分離されたローカルアプリケーションデータ領域）にのみ安全に保存されます。これらが外部に送信されることはありません。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brand-orange rounded-full"></span>
+                            5. お問い合わせ
+                        </h3>
+                        <p>
+                            本ポリシーやアプリに関するご質問、サポートのご依頼は、開発者（<strong>youyouboydragonOfficial</strong>）の公式窓口またはストア掲載サポートリンクまでお問い合わせください。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="border-t border-brand-border py-8 bg-[#080b0f] text-slate-500 text-xs">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p>&copy; 2026 youyouboydragonOfficial. All rights reserved.</p>
+                <p class="text-[11px] text-slate-600 mt-0.5">Crashoria: Ultimate Road Adventure - Portable Edition</p>
+            </div>
+            <div class="flex items-center space-x-6 text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">概要</a>
+                <a href="#features" class="hover:text-white transition-colors">機能</a>
+                <a href="#install" class="hover:text-white transition-colors">インストール</a>
+                <a href="#privacy" class="hover:text-white transition-colors">プライバシー</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
